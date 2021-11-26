@@ -1,2 +1,2 @@
-# briefing-model
-Modelo de Briefing
+# Ignite ReactJS
+Atividades da Trilha ReactJS
