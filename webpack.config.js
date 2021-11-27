@@ -7,13 +7,13 @@ const ReactRefreshWebpackPlugin =require('@pmmmwh/react-refresh-webpack-plugin')
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map' : 'source-map',
-  entry: path.resolve(__dirname, 'src', 'index.jsx'), //arquivo principal da aplicação
+  entry: path.resolve(__dirname, 'src', 'index.tsx'), //arquivo principal da aplicação
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx", ".ts", ".tsx"]
   },
   devServer: {
     static: path.resolve(__dirname, 'public'),
@@ -29,7 +29,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/, //é javascript ou não?-verifica se termina com a extensão
+        test: /\.(j|t)sx$/, //é javascript ou não?-verifica se termina com a extensão
 				exclude: /node_modules/, 
         use: {
           loader: 'babel-loader',//integração entre o babel e o webpack
